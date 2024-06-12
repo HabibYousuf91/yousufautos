@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Yousuf Autos Maintenance & Repair Service</title>
+  <meta name="title" content="Autofix - Auto Maintenance & Repair Service">
+  <meta name="description" content="This is a vehicle repair html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - material icon font
+  -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
+
+  <style>
+    .collapse {
+        display: none;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .translate-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      background-color: #ccc;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Styles for the arrow buttons */
+    .arrow-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999; /* Ensure it's above other content */
+    }
+
+    .arrow-buttons button {
+      width: 40px;
+      height: 40px;
+      background-color: #ccc;
+      border: none;
+      cursor: pointer;
+    }
+    /* The Modal (background) */
+    .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button */
+    .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header">
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./assets/images/logo.png" width="128" height="63" alt="YousufAutos home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#home" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link">About</a>
+          </li>
+
+          <li>
+            <a href="#services" class="navbar-link">Services</a>
+          </li>
+
+          <li>
+            <a href="#projects" class="navbar-link">Projects</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="navbar-link">Contact</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Trigger/Open The Modal -->
+      <a href="#" class="btn btn-primary" id="whyUsBtn">
+        <span class="span">Why US?</span>
+        <span class="material-symbols-rounded">arrow_forward</span>
+      </a>    
+      
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+      
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">×</span>
+          <h2>Why Choose Yousuf Autos?</h2>
+          <ul>
+            <li><strong>Experienced Certified Mechanics:</strong> Our team consists of highly skilled and certified professionals,
+              ensuring expert service for every vehicle.</li>
+            <li><strong>High-Quality Equipment and Genuine Parts:</strong> We use only the best equipment and genuine parts to
+              guarantee longevity and reliability for your car.</li>
+            <li><strong>Customer Satisfaction:</strong> At Yousuf Autos, customer satisfaction is paramount. We go the extra mile
+              to ensure you're delighted with our services.</li>
+            <li><strong>Comprehensive Auto Services:</strong> From oil changes and brake repairs to engine diagnostics and
+              transmission services, we handle it all.</li>
+          </ul>
+          <br>
+          
+          <p><strong>Committed to Quality Auto Repair and Maintenance</strong></p>
+          
+          <p>At Yousuf Autos, we prioritize quality in every service we provide. Our certified mechanics use top-of-the-line
+            equipment and genuine parts to ensure your vehicle receives the best care possible. Your satisfaction and safety are
+            our highest priorities. Whether you need routine maintenance, major repairs, or diagnostics, Yousuf Autos is your
+            trusted partner in automotive care.</p>
+          
+
+        </div>
+      
+      </div>
+      
+      <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("whyUsBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+          modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+          modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+      </script>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <a href="#home" class="btn" style="position: fixed; bottom: 20px; right: 20px;">
+        <span class="span"></span>
+        <span class="material-symbols-rounded">arrow_upward</span>
+      </a>
+    
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section id="home" class="hero has-bg-image" aria-label="home" style="background-image: url('./assets/images/hero-bg.jpg')">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="section-subtitle :dark">Expert Auto Repair Services You Can Trust</p>
+
+            <h1 class="h2 section-title" style="color: hsl(1, 91%, 37%);">Yousuf Auto Maintenance & Repair Service</h1>
+
+
+            <p class="section-text">
+              Welcome to Yousuf Autos, your trusted partner for all your automotive needs. With years of experience and certified mechanics, 
+              we offer reliable, high-quality repair and maintenance services to keep your vehicle running smoothly.
+            </p>
+
+            <a href="#services"  class="btn">
+              <span class="span">Our Services</span>
+              <span class="material-symbols-rounded">arrow_forward</span>
+            </a>
+
+          </div>
+
+          <figure class="hero-banner" style="--width: 1228; --height: 789;">
+            <img src="./assets/images/hero-banner.png" width="1228" height="789" alt="red motor vehicle"
+              class="move-anim">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section id="services" class="section service has-bg-image" aria-labelledby="service-label"
+        style="background-image: url('./assets/images/service-bg.jpg')">
+        <div class="container">
+
+          <p class="section-subtitle :light" id="service-label">Our services</p>
+
+          <h2 class="h2 section-title">We Provide Great Services For your Vehicle</h2>
+
+          <ul class="service-list">
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="./assets/images/services-1.png" width="110" height="110" loading="lazy" alt="Engine Repair">
+                </figure>
+
+                <h3 class="h3 card-title">Engine Repair</h3>
+
+                <p class="card-text">
+                  Expert engine diagnostics and repairs to ensure your vehicle runs smoothly and efficiently.
+                </p>
+
+                <a href="#" class="btn-link">Read more</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="./assets/images/services-2.png" width="110" height="110" loading="lazy" alt="Brake Repair">
+                </figure>
+
+                <h3 class="h3 card-title">Brake Repair</h3>
+
+                <p class="card-text">
+                  Comprehensive brake inspection and repair services to keep you safe on the road.
+                </p>
+
+                <a href="#" class="btn-link">Read more</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="./assets/images/services-3.png" width="110" height="110" loading="lazy" alt="Tire Repair">
+                </figure>
+
+                <h3 class="h3 card-title">Window Repair</h3>
+
+                <p class="card-text">
+                  Quick repair center locking, Window mirror and replacement to maintain optimal performance.
+                </p>
+
+                <a href="#" class="btn-link">Read more</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="./assets/images/services-4.png" width="110" height="110" loading="lazy"
+                    alt="Battery Repair">
+                </figure>
+
+                <h3 class="h3 card-title">Electrical Services</h3>
+
+                <p class="card-text">
+                  Professional Electrician , battery Charge and services to keep your car starting reliably.
+                </p>
+
+                <a href="#" class="btn-link">Read more</a>
+
+              </div>
+            </li>
+
+            <li class="service-banner">
+              <img src="./assets/images/services-5.png" width="646" height="380" loading="lazy" alt="Red Car"
+                class="move-anim">
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="./assets/images/services-6.png" width="110" height="110" loading="lazy"
+                    alt="Steering Repair">
+                </figure>
+
+                <h3 class="h3 card-title">Steering Repair</h3>
+
+                <p class="card-text">
+                  Precision steering, Suspension repair services for improved control and handling of your vehicle.
+                </p>
+
+                <a href="#" class="btn-link">Read more</a>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <a href="#" class="btn" id="collapseBtn">
+            <span class="span">View All Services</span>
+            <span class="material-symbols-rounded">arrow_forward</span>
+        </a>
+    
+        <!-- The Collapsible Content -->
+        <div id="collapseBtnContent" class="collapse">
+            <h2>Our Services</h2>
+            <p>Here are all the services we offer at Yousuf Autos:</p>
+            <ul>
+              <li><strong>Routine Maintenance:</strong> Regular oil changes, tire rotations, and brake inspections.</li>
+              <li><strong>Engine Diagnostics and Repairs:</strong> Identify and fix engine problems quickly.</li>
+              <li><strong>Transmission Services:</strong> Expert care for your vehicle’s transmission.</li>
+              <li><strong>Brake Services:</strong> Ensure your safety with top-notch brake repairs and replacements.</li>
+              <li><strong>Suspension and Steering:</strong> Keep your ride smooth and safe.</li>
+              <li><strong>Electrical Systems:</strong> Fix issues with your vehicle's electrical components.</li>
+          </ul>
+        </div>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const collapseBtn = document.getElementById('collapseBtn');
+                const collapseContent = document.getElementById('collapseBtnContent');
+    
+                collapseBtn.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent the default anchor behavior
+    
+                    if (collapseContent.style.display === "block") {
+                        collapseContent.style.display = "none";
+                    } else {
+                        collapseContent.style.display = "block";
+                    }
+                });
+            });
+        </script>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section id="about" class="section about has-before" aria-labelledby="about-label">
+        <div class="container">
+
+          <figure class="about-banner">
+            <img src="./assets/images/about-banner.png" width="540" height="540" loading="lazy"
+              alt="vehicle repire equipments" class="w-100">
+          </figure>
+
+          <div class="about-content">
+
+            <p class="section-subtitle :dark">About Us</p>
+
+            <h2 class="h2 section-title">We’re Commited to Meet the quality</h2>
+
+            <p class="section-text">
+              At Yousuf Autos, we prioritize high-quality auto maintenance in every service we provide. Our certified mechanics use 
+              top-of-the-line equipment and genuine parts to ensure your vehicle receives the best care possible. 
+              Your satisfaction and safety are our highest priorities.
+            </p>
+
+            <ul class="about-list">
+
+              <li class="about-item">
+                <p>
+                  <strong class="display-1 strong">8K+</strong> Happy Clients
+                </p>
+              </li>
+
+              <li class="about-item">
+                <p>
+                  <strong class="display-1 strong">22+</strong> Instruments
+                </p>
+              </li>
+
+              <li class="about-item">
+                <p>
+                  <strong class="display-1 strong">50+</strong> Years in market
+                </p>
+              </li>
+
+              <li class="about-item">
+                <p>
+                  <strong class="display-1 strong">99%</strong> Projects completed
+                </p>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #WORK
+      -->
+
+      <section id="projects" class="section work" aria-labelledby="work-label">
+        <div class="container">
+
+          <p class="section-subtitle :light" id="work-label">Our Work</p>
+
+          <h2 class="h2 section-title">Latest projects we have done</h2>
+
+          <ul class="has-scrollbar">
+
+            <li class="scrollbar-item">
+              <div class="work-card">
+
+                <figure class="card-banner img-holder" style="--width: 350; --height: 406;">
+                  <img src="./assets/images/work-1.jpg" width="350" height="406" loading="lazy" alt="Engine Repair"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Auto Repair</p>
+
+                  <h3 class="h3 card-title">Engine Repair</h3>
+
+                  <a href="#" class="card-btn">
+                    <span class="material-symbols-rounded">arrow_forward</span>
+                  </a>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="work-card">
+
+                <figure class="card-banner img-holder" style="--width: 350; --height: 406;">
+                  <img src="./assets/images/work-2.jpg" width="350" height="406" loading="lazy" alt="Car Tyre change"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Auto Repair</p>
+
+                  <h3 class="h3 card-title">Car Tyre change</h3>
+
+                  <a href="#" class="card-btn">
+                    <span class="material-symbols-rounded">arrow_forward</span>
+                  </a>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="work-card">
+
+                <figure class="card-banner img-holder" style="--width: 350; --height: 406;">
+                  <img src="./assets/images/work-3.jpg" width="350" height="406" loading="lazy" alt="Battery Adjust"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Auto Repair</p>
+
+                  <h3 class="h3 card-title">Battery Adjust</h3>
+
+                  <a href="#" class="card-btn">
+                    <span class="material-symbols-rounded">arrow_forward</span>
+                  </a>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+      <!-- 
+      - #FOOTER
+    -->
+      <section id="contact" class="section contact" aria-labelledby="contact-label">
+        <footer class="footer">
+    
+            <div class="footer-top section">
+              <div class="container">
+        
+                <div class="footer-brand">
+        
+                  <a href="#" class="logo">
+                    <img src="./assets/images/logo.png" width="128" height="63" alt="autofix home">
+                  </a>
+        
+                  <p class="footer-text">
+                    Have a question or need to schedule an appointment? 
+                  </p>
+                  <p class="footer-text">
+                    Contact us today!
+                  </p>
+        
+                  <ul class="social-list">
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=100039073631432" class="social-link" target="_blank">
+                            <img src="./assets/images/facebook.png" alt="facebook">
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://wa.me/+923362408454" class="social-link" target="_blank">
+                            <img src="./assets/images/wapp.png" alt="Whatsapp">
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://maps.app.goo.gl/4K95dvBJpqncmgrP6" class="social-link" target="_blank">
+                            <img src="./assets/images/map.png" alt="Maps">
+                        </a>
+                    </li>
+                </ul>
+              
+        
+                </div>
+        
+                <ul class="footer-list">
+        
+                  <li>
+                    <p class="h3">Opening Hours</p>
+                  </li>
+        
+                  <li>
+                    <p class="p">Monday – Thusday</p>
+        
+                    <span class="span">10:00  20:00 </span>
+                  </li>
+
+                  <li>
+                    <p class="p">Friday</p>
+        
+                    <span class="span">10:00  13:00 </span>
+                  </li>
+        
+                  <li>
+                    <p class="p">Saturday – Sunday</p>
+        
+                    <span class="span">10:00  17:00 </span>
+                  </li>
+        
+                  
+        
+                </ul>
+        
+                <ul class="footer-list">
+        
+                  <li>
+                    <p class="h3">Contact Info</p>
+                  </li>
+        
+                  <li>
+                    <a href="tel:+01234567890" class="footer-link">
+                      <span class="material-symbols-rounded">call</span>
+        
+                      <span class="span">+92 336 2408454</span>
+                    </a>
+                  </li>
+        
+                  <li>
+                    <a href="mailto:yousufautos@gmail.com" class="footer-link">
+                      <span class="material-symbols-rounded">mail</span>
+        
+                      <span class="span">yousufautos@gmail.com</span>
+                    </a>
+                  </li>
+        
+                  <li>
+                    <address href="https://maps.app.goo.gl/4K95dvBJpqncmgrP6" class="footer-link address">
+                      <span class="material-symbols-rounded">location_on</span>
+        
+                      <span class="span">Shop-no: LS-9 block 17 Rahimabad, karachi. Near Ghosia masjid</span>
+                    </address>
+                  </li>
+        
+                </ul>
+        
+              </div>
+        
+              <img src="./assets/images/footer-shape-3.png" width="637" height="173" loading="lazy" alt="Shape"
+                class="shape shape-3 move-anim">
+        
+            </div>
+        
+            <div class="footer-bottom">
+              <div class="container">
+        
+                <p class="copyright">Copyright 2024, YousufAutos All Rights Reserved.</p>
+        
+                <img src="./assets/images/footer-shape-2.png" width="778" height="335" loading="lazy" alt="Shape"
+                  class="shape shape-2">
+        
+                <img src="./assets/images/footer-shape-1.png"
+                width="805" height="652" loading="lazy" alt="Red Car"
+                class="shape shape-1 move-anim">
+        
+            </div>
+          </div>
+        
+        </footer>
+      </section>
+
+    </article>
+  </main>
+
+  
+
+<!-- 
+  - custom js link
+-->
+<script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>
